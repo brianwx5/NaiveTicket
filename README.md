@@ -248,9 +248,29 @@ What do you think would be printed if you altered the fourth state- ment of prin
 What about the following version? System.out.println("# price cents.");
 
 	* This will print out the same as the previous exercise, which is "# price cents."
+	
 ### Exercise 2.38 
 Could either of the previous two versions be used to show the price of tickets in different ticket machines? Explain your answer.
+
 	* It will not be able to because the price is not a variable. The one we have are both hard coded statements that we 	       are printing.
+	
+### Exercise 2.39 
+Modify the constructor of TicketMachine so that it no longer has a parameter. Instead, the price of tickets should be fixed at 1000 cents. What effect does this have when you construct ticket machine objects within BlueJ?
+
+	* In BlueJ, we will not need to input the price for the ticket.
+	
+### Exercise 2.40 
+Implement a method, empty, that simulates the effect of removing all money from the machine. This method should have a void return type, and its body should simply set the total field to zero. Does this method need to take any parameters? Test your method by creating a machine, inserting some money, printing some tickets, checking the total, and then emptying the machine. Is this method a mutator or an accessor?
+
+	* This method is an accessor because we are accessing the variable total from outside the method and within the class.
+
+### Exercise 2.41 
+Implement a method, setPrice, that is able to set the price of tickets to a new value. The new price is passed in as a parameter value to the method. Test your method by creating a machine, showing the price of tickets, changing the price, and then showing the new price. Is this method a mutator?
+
+	 * This method is an mutator because we are changing the value of total.
+	 
+### Exercise 2.42 
+Give the class two constructors. One should take a single parame- ter that specifies the price, and the other should take no parameter and set the price to be a default value of your choosing. Test your implementation by creating machines via the two different constructors.
 
 Work all Exercises from 2.19 to 2.58 that are **NOT** marked *Challenge exercise*.
 READ upto and INCLUDING section 2.15 of this chapter.
