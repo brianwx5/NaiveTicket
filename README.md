@@ -272,5 +272,113 @@ Implement a method, setPrice, that is able to set the price of tickets to a new 
 ### Exercise 2.42 
 Give the class two constructors. One should take a single parame- ter that specifies the price, and the other should take no parameter and set the price to be a default value of your choosing. Test your implementation by creating machines via the two different constructors.
 
+### Exercise 2.43 
+Check that the behavior we have discussed here is accurate by creating a TicketMachine instance and calling insertMoney with various actual parameter values. Check the balance both before and after calling insertMoney. Does the balance ever change in the cases when an error message is printed? Try to predict what will happen if you enter the value zero as the parameter, and then see if you are right.
+
+	* The balance does not change when you put a zero or negative number, which is what we want. It passes the validation 		test. If zero is the input, an error message will pop up.
+	
+### Exercise 2.44 
+Predict what you think will happen if you change the test in insertMoney to use the greater-than or equal-to operator:
+  if(amount >= 0)
+Check your predictions by running some tests. What difference does it make to the behavior of the method?
+
+	* By adding a greater-than or equal-to operator, the zero will be added to the balance and an error message will not 	       pop up.
+
+### Exercise 2.45 
+In the shapes project we looked at in Chapter 1 we used a boolean field to control a feature of the circle objects. What was that feature? Was it well suited to being controlled by a type with only two different values?
+
+	* This was used for the visibility feature. It is well suited for this situation because there is only two options.
+### Exercise 2.47
+After a ticket has been printed, could the value in the balance field ever be set to a negative value by subtracting price from it? Justify your answer.
+
+	* There is a check to prevent a negative value from happening with an if statement.
+	
+### Exercise 2.48 
+So far we have introduced you to two arithmetic operators, + and –, that can be used in arithmetic expressions in Java. Take a look at Appendix D to find out what other operators are available.
+
+	* There is also * , / , and %.
+
+### Exercise 2.49 
+Write an assignment statement that will store the result of multiply- ing two variables, price and discount, into a third variable, saving.
+
+	* saving = price * discount;
+
+### Exercise 2.50 
+Write an assignment statement that will divide the value in total by the value in count and store the result in mean.
+
+	* mean = total / count;
+
+### Exercise 2.51 
+Write an if statement that will compare the value in price against the value in budget. If price is greater than budget then print the message ‘Too expensive’, otherwise print the message ‘Just right’.
+
+	* if(price >budget) {System.out.println("Too Expensive");}
+		else {System.out.println("Just Right");}
+
+### Exercise 2.52 
+Modify your answer to the previous exercise so that the message if the price is too high includes the value of your budget.
+
+	* if(price >budget) {System.out.println("Too Expensive because your budget is $ " + budget);}
+		else {System.out.println("Just Right");}
+		
+### Exercise 2.53 
+Why does the following version of refundBalance not give the same results as the original?
+  public int refundBalance()
+  {
+balance = 0;
+      return balance;
+  }
+What tests can you run to demonstrate that it does not?
+
+	* In this version, you only return a balance of 0.
+
+### Exercise 2.54 
+What happens if you try to compile the TicketMachine class with
+the following version of refundBalance?
+  public int refundBalance()
+  {
+      return balance;
+balance = 0; }
+What do you know about return statements that helps to explain why this version does not compile?
+
+	* You will get an "Unreachable Statement" error because anything after a return will not be read.
+	
+### Exercise 2.55 
+Add a new method, emptyMachine, that is designed to simulate emptying the machine of money. It should both return the value in total and reset total to be zero.
+
+	* public int emptyMachine() {
+		int empty = total;
+		total = 0;
+		return empty; }
+		
+### Exercise 2.56 
+Is emptyMachine an accessor, a mutator, or both?
+
+	* emptyMachine is a mutator mutating the variables.
+	
+### Exercise 2.57 
+Rewrite the printTicket method so that it declares a local variable, amountLeftToPay. This should then be initialized to contain the difference between price and balance. Rewrite the test in the conditional statement to check the value of amountLeftToPay. If its value is less than or equal to zero, a ticket should be printed, otherwise an error message should be printed stating the amount still required. Test your version to ensure that it behaves in exactly the same way as the original version.
+
+	* public void printTicket()
+	{
+ 	int amountLeftToPay = price - balance;
+ 	if(amountLeftToPay <= 0) {
+ 		// Simulate the printing of a ticket.
+ 		System.out.println("##################");
+ 		System.out.println("# The BlueJ Line");
+ 		System.out.println("# Ticket");
+ 		System.out.println("# " + price + " cents.");
+ 		System.out.println("##################");
+ 		System.out.println();
+		
+ 		// Update the total collected with the price.
+ 		total = total + price;
+ 		// Reduce the balance by the prince.
+ 		balance = balance - price;
+ 		}
+ 	else {
+ 		System.out.println(
+ 		(amountLeftToPay) + " more cents is required.");
+ 		}
+
 Work all Exercises from 2.19 to 2.58 that are **NOT** marked *Challenge exercise*.
 READ upto and INCLUDING section 2.15 of this chapter.
