@@ -147,6 +147,110 @@ public Book(String title, double price)
 	* Some of the types you might see in the 'Book' class will be String, int, or double.
 * Can you assume anything about the names of its fields?
 	* It might contain fields with names such as "title","author","page","year", and etc.
+	
+### Exercise 2.19 
+* Suppose that the class Pet has a field called name that is of type String. Write an assignment statement in the body of the following constructor so that the name field will be initialized with the value of the constructor’s parameter.
+
+	* name = petName;
+	
+### Exercise 2.21 
+Compare the getBalance method with the getPrice method. What are the differences between them?
+	* The only difference is the getBalance method returning the Balance, while the getPrice returns the price.
+	
+### Exercise 2.22 
+If a call to getPrice can be characterized as ‘What do tickets cost?’, how would you characterize a call to getBalance?
+	* How much money did you put in?
+
+### Exercise 2.23 
+If the name of getBalance is changed to getAmount, does the return statement in the body of the method need to be changed, too? Try it out within BlueJ.
+	* You do not need to change it because it is just the name of the method. By naming convention, your method should 	     describe what action it will perform.
+	
+### Exercise 2.24 
+Define an accessor method, getTotal, that returns the value of the total field.
+	* The getTotal accessor method return information to the caller about the state of an object.
+
+### Exercise 2.25 
+Try removing the return statement from the body of getPrice. What error message do you see now when you try compiling the class?
+	* "Missing return statement"
+
+### Exercise 2.26 
+Compare the method signatures of getPrice and printTicket in Code 2.1. Apart from their names, what is the main difference between them?
+	The main difference is the type that is returned. getPrice will return an int, while the printTicket will return 	 nothing because it is void.
+	
+### Exercise 2.27 
+Do the insertMoney and printTicket methods have return statements? Why do you think this might be? Do you notice anything about their headers that might suggest why they do not require return statements?
+	* Both methods do not return any statements because they are void types, which means nothing will return,
+	
+### Exercise 2.28 
+Create a ticket machine with a ticket price of your choosing. Before doing anything else, call the getBalance method on it. Now call the insertMoney method (Code 2.6) and give a non-zero positive amount of money as the actual parameter. Now call getBalance again. The two calls to getBalance should show different output because the call to insertMoney had the effect of changing the machine’s state via its balance field.
+
+### Exercise 2.29 
+How can we tell from just its header that setPrice is a method and not a constructor?
+public void setPrice(int ticketCost)
+	* Since it declares a return type you can tell it is a method. If there was not type then it would be a constructor.
+### Exercise 2.30 
+Complete the body of the setPrice method so that it assigns the
+value of its parameter to the price field.
+
+	public void setPrice(int ticketCost){
+		price =ticketCost;}
+		
+### Exercise 2.31 
+Complete the body of the following method, whose purpose is to
+add the value of its parameter to a field named score.
+  /**
+   * Increase score by the given number of points.
+   */
+  public void increase(int points)
+  {
+  score = score + points;
+ }
+ 
+### Exercise 2.32 
+Can you complete the following method, whose purpose is to sub- tract the value of its parameter from a field named price?
+  /**
+   * Reduce price by the given amount.
+   */
+  public void discount(int amount)
+  {
+	price = price - amount;
+}
+
+### Exercise 2.33 
+Add a method called prompt to the TicketMachine class. This should have a void return type and take no parameters. The body of the method should print something like:
+  Please insert the correct amount of money.
+  
+    public void prompt() {
+    System.out.println("Please insert the right amount of money");
+    }
+    
+### Exercise 2.34 
+Add a showPrice method to the TicketMachine class. This should have a void return type and take no parameters. The body of the method should print something like:
+The price of a ticket is xyz cents.
+where xyz should be replaced by the value held in the price field when the method
+is called.
+
+    public void showPrice() {
+    System.out.println("The price of a ticket is " + price + " cents.");
+    }
+    
+### Exercise 2.35 
+Create two ticket machines with differently priced tickets. Do calls to their showPrice methods show the same output, or different? How do you explain this effect?
+	* The two machines show different prices because they are two different instances of the same class with their own      	  identity. Each has different prices because we set prices differently for both ticket machines.
+	
+### Exercise 2.36 
+What do you think would be printed if you altered the fourth state- ment of printTicket so that price also has quotes around it, as follows?
+  System.out.println("# " + "price" + " cents.");
+  
+  	* It will print out # price cents.
+	
+### Exercise 2.37 
+What about the following version? System.out.println("# price cents.");
+
+	* This will print out the same as the previous exercise, which is "# price cents."
+### Exercise 2.38 
+Could either of the previous two versions be used to show the price of tickets in different ticket machines? Explain your answer.
+	* It will not be able to because the price is not a variable. The one we have are both hard coded statements that we 	       are printing.
 
 Work all Exercises from 2.19 to 2.58 that are **NOT** marked *Challenge exercise*.
 READ upto and INCLUDING section 2.15 of this chapter.
